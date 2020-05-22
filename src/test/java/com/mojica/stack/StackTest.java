@@ -2,6 +2,8 @@ package com.mojica.stack;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
@@ -26,10 +28,9 @@ class StackTest {
     }
 
     @Test
-    void peek_whenEmpty_ShouldReturnNull(){
+    void peek_whenEmpty_ShouldReturnException(){
         Stack stack = new Stack();
-        stack.peek();
-        assertNull(stack.peek());
+        assertThrows(EmptyStackException.class, ()-> stack.peek());
     }
 
     @Test

@@ -42,8 +42,9 @@ class QueueTest {
         //exercise
         Object actual = queue.enqueue(object);
         assertNotNull(actual);
-
         queue.dequeue();
+
+
 
         boolean expected = queue.isEmpty();
 
@@ -96,9 +97,10 @@ class QueueTest {
 
         //should remove data1
         queue.dequeue();
+        System.out.println(queue);
 
         // assesert
-        assertEquals(data1,queue.peek());
+        assertEquals(data2,queue.peek());
 
     }
 

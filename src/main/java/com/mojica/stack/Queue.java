@@ -34,9 +34,16 @@ public class Queue {
         return data;
     }
 
-    public void dequeue() {
-
+    public Object dequeue() {
+        if(isEmpty()) throw new RuntimeException("Empty Queue.");
+        Object temp = head.getData();
+        head = head.getNext();
+        return temp;
     }
+
+
+
+
 
     public Object peek() throws EmptyStackException {
         if (data == null) {
